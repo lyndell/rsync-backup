@@ -1,0 +1,1 @@
+Thinking of whether to separate parameters into command line arguments, or a separate settings file.  Separating thee settings fro the program would be good, that way the customer can be certain that the program hasn’t been altered and only needs to edit the settings file.  Would be easier to run more than one instance from the cronjob by separating out the settings.  
