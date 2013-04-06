@@ -51,11 +51,11 @@
 # TODO; test for parameter; required
 # TODO; test for directories listed in DIR parms
 source $1
-SRC="$USER@$HOST:$SRCDIR"
+SRC="${USER}@${HOST}:${SRCDIR}"
 # $DSTDIR is set in conf file
 
 # use default identy, ssh key, don't need to pass parms to SSH
-rsync $T -i --log-file=$LOGFILE --delete -avv $BWLIMIT $SRC $DSTDIR
+rsync $opts -i --log-file=$LOGFILE --delete -avv $BWLIMIT $SRC $DSTDIR
 # -i, --itemize-changes       output a change-summary for all updates
 #     --log-file=FILE         log what we're doing to the specified FILE
 #     -v, --verbose               increase verbosity
