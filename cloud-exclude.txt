@@ -2,8 +2,5 @@ GIT
 restore
 tmp
 lost+found
-GIT
-restore
-tmp
-lost+found
 *.vhd
+*.iso
