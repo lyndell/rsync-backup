@@ -4,3 +4,5 @@ tmp
 lost+found
 *.vhd
 *.iso
+.git
+.gitignore
