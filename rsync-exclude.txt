@@ -6,3 +6,4 @@ home/GIT
 home/restore
 home/tmp
 home/lost+found
+*.vhd
