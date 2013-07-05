@@ -2,6 +2,7 @@ GIT
 restore
 tmp
 lost+found
+home/downloads
 home/GIT
 home/restore
 home/tmp
