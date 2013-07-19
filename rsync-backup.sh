@@ -65,5 +65,5 @@ rsync $opts -i --log-file=$LOGFILE --delete -avv $BWLIMIT $SRC $DSTDIR
 
 
 
-tail $LOGFILE
+bzip2 -v  $LOGFILE
 
