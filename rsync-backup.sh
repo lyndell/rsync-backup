@@ -32,11 +32,13 @@
 #
 ##############################################################################
 
-T="";   # dry run, test mode OFF
 T="-n"; # dry run, test mode ON
+T="";   # dry run, test mode OFF
 
-SOURCE="lyndell@vps.Lyndell.NET:public_html"
-DESTINATION="/Users/lyndell/Excludes/vps.Lyndell.NET"
+SOURCE="user@example.com:public_html"
+SOURCE="lyndell@vps.Lyndell.NET:."
+DESTINATION="/Users/backup/example.com"
+DESTINATION="deleteme"
 
 LOGFILE=`date +%s`.log
 rsync -avvi $T --log-file=$LOGFILE --delete  $SOURCE $DESTINATION
