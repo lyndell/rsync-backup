@@ -8,33 +8,18 @@
 # NAME:  Lyndell Rottmann
 # EMAIL: lrottann@softlayer.com
 #
-# INSTALLATION:
+# USAGE;
 #
-#        Configure SSH keys
-#        
-#        
-#        
-#        
-#        Save the file
-#        edit
-#        
-#        configure in crontab
-#        
-#        
-#        
-#        
+#        Just edit and run
 #        
 #
 # EDIT:
 #        Replace the sample data for the first four parameters
 #        
-#          SRCDIR     Directory to be backed-up.
-#          USER       username for logging into the remote server.
-#          HOST       hostname (domain) of server to save the backups on.
-#          DSTDIR     Where to save the backups on the remove server.
+#          SOURCE          user@servername:path
+#          DESTINATION     Directory to save the backups
 #        
 #        No password required, because SSH will authentic with keys.
-#        
 #        
 #        
 #        
@@ -47,23 +32,21 @@
 #
 ##############################################################################
 
-# import settings
-# TODO; test for parameter; required
-# TODO; test for directories listed in DIR parms
-source $1
-SRC="${USER}@${HOST}:${SRCDIR}"
-# $DSTDIR is set in conf file
+T="-n"; # dry run, test mode ON
+T=""; # dry run, test mode OFF
+# remote backup source directory
+SOURCE="lyndell@vps.Lyndell.NET:public_html"
+DESTINATION="/Users/lyndell/Excludes/vps.Lyndell.NET"
 
 # use default identy, ssh key, don't need to pass parms to SSH
-rsync $opts -i --log-file=$LOGFILE --delete -avv $BWLIMIT $SRC $DSTDIR
+LOGFILE=`date +%s`.log
+rsync -avvi $T --log-file=$LOGFILE --delete  $SOURCE $DESTINATION
 # -i, --itemize-changes       output a change-summary for all updates
 #     --log-file=FILE         log what we're doing to the specified FILE
 #     -v, --verbose               increase verbosity
 #     -a, --archive               archive mode; same as -rlptgoD (no -H)
-#     -r, --recursive             recurse into directories
-#     -t, --times                 preserve times
 
 
-
+# compress that log
 bzip2 -v  $LOGFILE
 
