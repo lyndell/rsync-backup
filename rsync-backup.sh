@@ -32,13 +32,12 @@
 #
 ##############################################################################
 
+T="";   # dry run, test mode OFF
 T="-n"; # dry run, test mode ON
-T=""; # dry run, test mode OFF
-# remote backup source directory
+
 SOURCE="lyndell@vps.Lyndell.NET:public_html"
 DESTINATION="/Users/lyndell/Excludes/vps.Lyndell.NET"
 
-# use default identy, ssh key, don't need to pass parms to SSH
 LOGFILE=`date +%s`.log
 rsync -avvi $T --log-file=$LOGFILE --delete  $SOURCE $DESTINATION
 # -i, --itemize-changes       output a change-summary for all updates
