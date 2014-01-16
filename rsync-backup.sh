@@ -17,7 +17,12 @@
 #        Replace the sample data for the first four parameters
 #        
 #          SOURCE          user@servername:path
+#                  Example:
+#                      SOURCE="user@example.com:public_html"
+#        
 #          DESTINATION     Directory to save the backups
+#                  Example:
+#                      DESTINATION="/Users/backup/example.com"
 #        
 #        No password required, because SSH will authentic with keys.
 #        
@@ -35,10 +40,8 @@
 T="-n"; # dry run, test mode ON
 T="";   # dry run, test mode OFF
 
-SOURCE="user@example.com:public_html"
 SOURCE="lyndell@vps.Lyndell.NET:."
-DESTINATION="/Users/backup/example.com"
-DESTINATION="deleteme"
+DESTINATION="backup"
 
 LOGFILE=`date +%s`.log
 rsync -avvi $T --log-file=$LOGFILE --delete  $SOURCE $DESTINATION
