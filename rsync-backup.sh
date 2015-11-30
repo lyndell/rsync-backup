@@ -6,7 +6,7 @@
 # DESC:  Synchronizes one directory to a remote server over SSH 
 #
 # NAME:  Lyndell Rottmann
-# EMAIL: lrottann@softlayer.com
+# EMAIL: 
 #
 # USAGE;
 #
